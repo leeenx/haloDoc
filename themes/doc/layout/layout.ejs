@@ -38,22 +38,22 @@
 		}();
 	</script>
 	<%- css("css/index") %>
-		<%- css("css/prettify") %>
+	<%- css("css/prettify") %>
 </head>
 
 <body>
 	<%- body %>
-		<script type="text/javascript">
-			window.hexo = {};
-			hexo.config = JSON.parse(
-				'<%- JSON.stringify(config) %>'
-			);
-			hexo.theme = JSON.parse(
-				'<%- JSON.stringify(theme) %>'
-			);
-			hexo.path = '<%- path %>';
-		</script>
-		<%- js('js/bundle.js') %>
+	<script type="text/javascript">
+		window.hexo = {};
+		hexo.config = JSON.parse(
+			'<%- JSON.stringify(config) %>'
+		);
+		hexo.theme = JSON.parse(
+			'<%- JSON.stringify(theme) %>'
+		);
+		hexo.path = '<%- path %>';
+	</script>
+	<%- js('js/bundle.js') %>
 </body>
 
 </html>

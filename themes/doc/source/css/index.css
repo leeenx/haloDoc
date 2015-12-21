@@ -130,8 +130,8 @@ h6 {
 	background: #29292b;
 	float: left;
 	text-align: left;
-	/*	box-shadow: 3px 0 3px rgba(12, 12, 12, .3);*/
 	overflow: auto;
+	z-index: 1;
 }
 
 .api_hd {
@@ -338,7 +338,7 @@ h6 {
 /*bd*/
 
 .bd {
-	/*	margin-top: 50px;*/
+	min-width: 800px;
 }
 
 .post_layout {
@@ -386,8 +386,10 @@ h6 {
 /*post*/
 
 .post {
+	position: relative;
 	padding: 30px 50px;
 	margin-left: 250px;
+	z-index: 0;
 }
 
 .post_title {
@@ -425,9 +427,46 @@ h6 {
 .post_content h4,
 .post_content h5,
 .post_content h6 {
+	position: relative;
 	color: #333;
 	margin: 1.5em 0 .67em;
 }
+
+.post_content h1 a,
+.post_content h2 a,
+.post_content h3 a,
+.post_content h4 a,
+.post_content h5 a,
+.post_content h6 a{
+	margin: 0;
+}
+
+/*
+.post_content h1:before,
+.post_content h2:before,
+.post_content h3:before,
+.post_content h4:before,
+.post_content h5:before,
+.post_content h6:before{
+	content: '#';
+	display: inline-block;
+	position: absolute;
+	left: -14px;
+	font-style: italic;
+	color: #fff;
+	-webkit-transition: all linear .05s;
+	transition: all linear .05s;
+}
+
+.post_content h1:hover:before,
+.post_content h2:hover:before,
+.post_content h3:hover:before,
+.post_content h4:hover:before,
+.post_content h5:hover:before,
+.post_content h6:hover:before{
+	color: rgb(97, 144, 232);
+}
+*/
 
 .post_content ul {
 	padding-left: 40px;
