@@ -1,0 +1,24 @@
+<!--S 文章-->
+
+
+<main class="bd">
+	<%- partial("partial/api_category.ejs", {
+		post: page
+	}) %>
+
+	<%- partial("partial/article.ejs", {
+		post: page
+	}) %>
+</main>
+
+<script id='j_template' type="text/template">
+	<li>
+		<a href='{{ href }}'>
+			{{ title }}
+			{{ #parent }}
+				<span> - {{ title }}</span>
+			{{ /parent }}
+		</a>
+	</li>
+</script>
+<!--E 文章-->

@@ -1,0 +1,29 @@
+<!--S 头部-->
+<header class="header">
+	<h2 class="header_logo">
+		<a href="./" alt="JDC" title="JDC">HALO.JS</a>
+	</h2>
+	<nav>
+		<ul>
+			<li>
+				<%- link_to(site.posts.toArray()[0].path, "API", {
+					external: true
+				})%>
+			</li>
+			<li>
+				<%- link_to("/assets/download.zip", "DOWNLOAD", {
+					external: true
+				})%>
+			</li>
+			<li>
+				<%- link_to("http://github.com", "GITHUB", {
+					external: true
+				})%>
+			</li>
+			<li>
+				<%- link_to("/about", "ABOUT")%>
+			</li>
+		</ul>
+	</nav>
+</header>
+<!--E 头部-->
