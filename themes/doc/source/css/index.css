@@ -50,15 +50,15 @@ h6 {
 /*header*/
 
 .header {
-	position: fixed;
+	position: absolute;
 	display: block;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 50px;
 	color: #fff;
-	background: rgb(102, 145, 228) url('../img/bg.png');
 	background-size: 100%;
+	z-index: 1;
 }
 
 .header_logo {
@@ -122,7 +122,7 @@ h6 {
 /*api侧边栏*/
 
 .api {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -339,6 +339,7 @@ h6 {
 
 .bd {
 	min-width: 800px;
+	height: 100%;
 }
 
 .post_layout {
@@ -346,16 +347,17 @@ h6 {
 }
 
 .idx {
-	padding-top: 50px;
+	/*	padding-top: 50px;*/
 }
 
 .idx_banner {
 	position: relative;
-	height: 450px;
+	height: 500px;
 	text-align: center;
 	color: #fff;
 	background: rgb(102, 145, 228) url('../img/bg.png') 0 -50px;
 	background-size: 100%;
+	overflow: hidden;
 }
 
 .idx_banner h1 {
@@ -365,6 +367,12 @@ h6 {
 	margin-top: -21px;
 	font-size: 42px;
 	line-height: 42px;
+}
+
+.idx_banner canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .idx_intro {
@@ -383,17 +391,32 @@ h6 {
 }
 
 
+/*footer*/
+
+.footer {
+	width: 100%;
+	height: 40px;
+	padding: 40px 0 80px;
+}
+.footer p {
+	text-align: center;
+}
+
+
 /*post*/
 
 .post {
 	position: relative;
+	height: 100%;
+	overflow: auto;
+	box-sizing: border-box;
 	padding: 30px 50px;
 	margin-left: 250px;
 	z-index: 0;
 }
 
 .post_title {
-	border-bottom: solid 1px
+	border-bottom: solid 1px #ddd;
 }
 
 .post_title a {
@@ -437,36 +460,9 @@ h6 {
 .post_content h3 a,
 .post_content h4 a,
 .post_content h5 a,
-.post_content h6 a{
+.post_content h6 a {
 	margin: 0;
 }
-
-/*
-.post_content h1:before,
-.post_content h2:before,
-.post_content h3:before,
-.post_content h4:before,
-.post_content h5:before,
-.post_content h6:before{
-	content: '#';
-	display: inline-block;
-	position: absolute;
-	left: -14px;
-	font-style: italic;
-	color: #fff;
-	-webkit-transition: all linear .05s;
-	transition: all linear .05s;
-}
-
-.post_content h1:hover:before,
-.post_content h2:hover:before,
-.post_content h3:hover:before,
-.post_content h4:hover:before,
-.post_content h5:hover:before,
-.post_content h6:hover:before{
-	color: rgb(97, 144, 232);
-}
-*/
 
 .post_content ul {
 	padding-left: 40px;
@@ -491,6 +487,35 @@ h6 {
 	background: #f9f2f4;
 }
 
+.post_content_error {
+	font-size: 12px;
+	background: #fff1f0;
+	color: #d85030;
+	padding: 10px;
+	border: 1px solid rgba(216,80,48,0.3);
+	border-radius: 3px;
+	line-height: 1.8em;
+}
+
+.post_content_warn {
+	font-size: 12px;
+	background: #fffceb;
+	color: #e28327;
+	padding: 10px;
+	border: 1px solid rgba(226,131,39,0.3);
+	border-radius: 3px;
+	line-height: 1.8em;
+}
+
+.post_content_info {
+	font-size: 12px;
+	background: #ebf7fd;
+	color: #2d7091;
+	padding: 10px;
+	border: 1px solid rgba(45,112,145,0.2);
+	border-radius: 3px;
+	line-height: 1.8em;
+}
 
 /***************************/
 
