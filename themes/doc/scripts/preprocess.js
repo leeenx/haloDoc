@@ -2,12 +2,18 @@ var browserify = require('browserify'),
 	path = require('path'),
 	fs = require('fs');
 
-var b = browserify();
-b.add(path.join(process.cwd(), '/themes/doc/source/_js/main.js'));
-b.bundle().pipe(fs.createWriteStream(path.join(process.cwd(), '/themes/doc/source/js/bundle.js')));
+var b = browserify(),
+	inStream,
+	writeStream,
+	codeArr;
+
+b.add(path.join(process.cwd(), 'themes/doc/source/_js/main.js'));
 
 hexo.theme.watch().then(function () {
-	hexo.theme.addProcessor('_js/main.js', function (file) {
-		console.log(file.path);
+	codeArr = [];
+	hexo.theme.addProcessor('_js/*path', function (file) {
+		inStream = b.bundle();
+		writeStream = fs.createWriteStream(path.join(process.cwd(), 'themes/doc/source/js/bundle.js'));
+		inStream.pipe(writeStream);
 	});
 });

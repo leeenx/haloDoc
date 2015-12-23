@@ -22,10 +22,10 @@ module.exports = {
 			}
 		}
 	},
-//	getScrollTop: (function () {
-//		/*获取滚动高度*/
-//		return Function('scrollY' in window ? 'return window.scrollY' : 'return document.documentElement.scrollTop');
-//	})(),
+	//	getScrollTop: (function () {
+	//		/*获取滚动高度*/
+	//		return Function('scrollY' in window ? 'return window.scrollY' : 'return document.documentElement.scrollTop');
+	//	})(),
 	forEach: function (a) {
 		return [].forEach.apply(a, Array.prototype.slice.call(arguments, 1));
 	},

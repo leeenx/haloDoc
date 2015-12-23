@@ -9,7 +9,6 @@
 		});
 */
 
-
 hexo.extend.tag.register(
 	'alert',
 	function (args, content) {
