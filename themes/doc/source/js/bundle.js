@@ -8,7 +8,7 @@ else {
 	var IDX = require('./modules/idx.js');
 	IDX.init();
 	IDX.start();
-}
+} 
 },{"./modules/api.js":2,"./modules/idx.js":5}],2:[function(require,module,exports){
 /*API页面相关*/
 var Util = require('./util'),

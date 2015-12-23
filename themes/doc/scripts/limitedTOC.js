@@ -11,16 +11,6 @@ hexo.extend.helper.register('limitedTOC', function (data, opt) {
 	str = [];
 	level = hexo.theme.config.TOClevel || [1, 2, 3, 4, 5, 6];
 	reg = new RegExp('<h([' + level.join('') + ']) id=[\'\"]([\\s\\S]*?)[\'\"]><a[\\s\\S]*?><\/a>([\\s\\S]*?)<\/h\\1>', 'g');
-	//	g1 level
-	//	g2 id
-	//	g3 text
-
-	//	'<h' + level + ' id="' + id + '">
-	//		<a href="#' + id + '" class="headerlink" title="' + stripHTML(text) + '">
-	//		</a>'
-	//		text
-	//	'</h' + level + '>'
-
 	grow = function (lvnow, e) {
 		cur = matched[0];
 		cur.replace(reg, function (mat, g1, g2, g3) {
