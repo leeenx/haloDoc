@@ -65,4 +65,5 @@ npm install
 {% endalert %}
 
 ### 代码Demo
-{% codepen KVggpQ %}
+
+{% codepen KVggpQ 250 %}
