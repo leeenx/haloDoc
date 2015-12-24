@@ -59,8 +59,8 @@ h6 {
 	color: #fff;
 	background-size: 100%;
 	z-index: 1;
-} 
- 
+}
+
 .header_logo {
 	float: left;
 	height: 100%;
@@ -117,6 +117,7 @@ h6 {
 	height: 100%;
 	border: none;
 }
+
 
 /*api侧边栏*/
 
@@ -397,6 +398,7 @@ h6 {
 	height: 40px;
 	padding: 40px 0 80px;
 }
+
 .footer p {
 	text-align: center;
 }
@@ -415,11 +417,32 @@ h6 {
 }
 
 .post_title {
+	position: relative;
+	height: 45px;
 	border-bottom: solid 1px #ddd;
+	color: #333;
 }
 
 .post_title a {
-	color: #333;
+	color: #bbb;
+}
+
+.post_title_edit {
+	float: right;
+	width: 60px;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+	box-sizing: border-box;
+	border: solid 1px #bbb;
+	margin-top: 7px;
+	-webkit-transition: border-color linear .1s, color linear .1s;
+	transition: border-color linear .1s, color linear .1s;
+}
+
+.post_title_edit:hover {
+	color: #666;
+	border-color: #666;
 }
 
 .post_content img {
@@ -491,7 +514,7 @@ h6 {
 	background: #fff1f0;
 	color: #d85030;
 	padding: 10px;
-	border: 1px solid rgba(216,80,48,0.3);
+	border: 1px solid rgba(216, 80, 48, 0.3);
 	border-radius: 3px;
 	line-height: 1.8em;
 }
@@ -501,7 +524,7 @@ h6 {
 	background: #fffceb;
 	color: #e28327;
 	padding: 10px;
-	border: 1px solid rgba(226,131,39,0.3);
+	border: 1px solid rgba(226, 131, 39, 0.3);
 	border-radius: 3px;
 	line-height: 1.8em;
 }
@@ -511,10 +534,11 @@ h6 {
 	background: #ebf7fd;
 	color: #2d7091;
 	padding: 10px;
-	border: 1px solid rgba(45,112,145,0.2);
+	border: 1px solid rgba(45, 112, 145, 0.2);
 	border-radius: 3px;
 	line-height: 1.8em;
 }
+
 
 /***************************/
 
