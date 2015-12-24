@@ -434,15 +434,15 @@ h6 {
 	line-height: 30px;
 	text-align: center;
 	box-sizing: border-box;
-	border: solid 1px #bbb;
+	border: solid 1px #ddd;
 	margin-top: 7px;
 	-webkit-transition: border-color linear .1s, color linear .1s;
 	transition: border-color linear .1s, color linear .1s;
 }
 
 .post_title_edit:hover {
-	color: #666;
-	border-color: #666;
+	color: #777;
+	border-color: #888;
 }
 
 .post_content img {
@@ -564,4 +564,8 @@ h6 {
 .post_content .prettyprint code {
 	color: inherit;
 	background: inherit;
+}
+
+.post_content .cp_embed_iframe {
+	margin: 20px 0;
 }

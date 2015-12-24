@@ -1,4 +1,3 @@
-var site = hexo.locals.get('site');
 hexo.extend.helper.register('limitedTOC', function (data, opt) {
 	var level,
 		reg,

@@ -10,19 +10,22 @@ var IDX = (function () {
 		init,
 		randPos,
 		animate,
-		circles,
-		lines,
+		items,
 		addCircle,
 		addLine,
 		addText,
-		animateID;
+		animateID,
+		randVerlet;
 
-	padding = 40;
-	circles = [];
-	lines = [];
+	padding = 100;
+	items = [];
 
 	randPos = function () {
 		return [_width * Math.random(), _height * Math.random()];
+	};
+	
+	randVerlet = function (max) {
+		return (Math.random() - .5) * 2 * (max || 1);
 	};
 
 	addCircle = function () {
@@ -34,11 +37,11 @@ var IDX = (function () {
 		g.interactive = true;
 		g.position.x = pos[0];
 		g.position.y = pos[1];
-		g.vx = Math.random() - .5;
-		g.vy = Math.random() - .5;
+		g.vx = randVerlet();
+		g.vy = randVerlet();
 		g.lineStyle(Math.random() * 4 + 8, '0x6DA1EF', 1);
 		g.drawCircle(-radius * .5, -radius * .5, radius);
-		circles.push(g);
+		items.push(g);
 		stage.addChild(g);
 	};
 
@@ -51,14 +54,14 @@ var IDX = (function () {
 		g.interactive = true;
 		g.position.x = pos[0];
 		g.position.y = pos[1];
-		g.vr = (Math.random() - .5) * .04;
-		g.vx = Math.random() - .5;
-		g.vy = Math.random() - .5;
+		g.vr = randVerlet(.04);
+		g.vx = randVerlet();
+		g.vy = randVerlet();
 		g.beginFill('0x6DA1EF');
 		g.drawRect(-len * .5, -5, Math.random() * 10 + 45, 10);
 		g.endFill();
 		g.rotation = Math.random() * 3.14;
-		lines.push(g);
+		items.push(g);
 		stage.addChild(g);
 	};
 
@@ -100,24 +103,10 @@ var IDX = (function () {
 
 	animate = function () {
 		renderer.render(stage);
-		circles.forEach(function (val) {
+		items.forEach(function (val) {
 			val.position.x += val.vx;
 			val.position.y += val.vy;
-			if (val.position.x > bound.right) {
-				val.position.x -= bound.width;
-			} else if (val.position.x < bound.left) {
-				val.position.x += bound.width;
-			}
-			if (val.position.y > bound.bottom) {
-				val.position.y -= bound.height;
-			} else if (val.position.y < bound.top) {
-				val.position.y += bound.height;
-			}
-		});
-		lines.forEach(function (val) {
-			val.position.x += val.vx;
-			val.position.y += val.vy;
-			val.rotation += val.vr;
+			val.rotation = val.vr ? val.rotation + val.vr : val.rotation;
 			if (val.position.x > bound.right) {
 				val.position.x -= bound.width;
 			} else if (val.position.x < bound.left) {

@@ -9,7 +9,7 @@ var b = browserify(),
 
 b.add(path.join(process.cwd(), 'themes/doc/source/_js/main.js'));
 
-hexo.theme.watch().then(function () {
+hexo.theme.process().then(function () {
 	codeArr = [];
 	hexo.theme.addProcessor('_js/*path', function (file) {
 		inStream = b.bundle();
