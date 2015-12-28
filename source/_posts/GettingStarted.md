@@ -11,6 +11,7 @@ order: 1
 ```bash
 cd haloDoc
 npm install
+git submodule update --init --recursive
 ```
 
 
