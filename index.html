@@ -1,0 +1,100 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0'>
+	<title>
+		
+		HALOJS
+	</title>
+	<script>
+		! function () {
+			window.addEventListener('resize', (function () {
+				var dd = document.documentElement,
+					w,
+					resize;
+				resize = function () {
+					w = dd.getBoundingClientRect().width;
+					if (w < 320) {
+						dd.style.fontSize = '20px';
+						return;
+					}
+					if (w < 640) {
+						dd.style.fontSize = w / 16 + 'px';
+						return;
+					}
+					dd.style.fontSize = '40px';
+				};
+				resize();
+				return resize;
+			})());
+		}();
+	</script>
+	<link rel="stylesheet" href="/haloDoc/css/index.css" type="text/css">
+	<link rel="stylesheet" href="/haloDoc/css/prettify.css" type="text/css">
+</head>
+
+<body>
+	<!--S 头部-->
+<header class="header">
+	<h2 class="header_logo">
+		<a href="./" alt="JDC" title="JDC">HALO.JS</a>
+	</h2>
+	<nav>
+		<ul>
+			<li>
+				<a href="/haloDoc/api/GettingStarted/" title="API" target="_blank" rel="external">API</a>
+			</li>
+			<li>
+				<a href="/assets/download.zip" title="DOWNLOAD" target="_blank" rel="external">DOWNLOAD</a>
+			</li>
+			<li>
+				<a href="http://github.com" title="GITHUB" target="_blank" rel="external">GITHUB</a>
+			</li>
+			<li>
+				<a href="/about" title="ABOUT">ABOUT</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<!--E 头部-->
+
+
+	<div class="bd idx">
+		<!--S 首页-->
+		<div class="idx_banner">
+			<canvas id='j_canvas'>
+				<h1>解放程序员双手的神器</h1>
+			</canvas>
+		</div>
+		<div class="idx_intro">
+			<div class="idx_intro_block">随着JDC轻APP页面的火爆，大量H5活动页面使用轻应用模式展示，产生了大量可模块化的交互方式及功能。</div>
+			<div class="idx_intro_block">一个交互效果的诞生可能需要耗费我等码农数小时甚至数天的时间完成，为了提高开发的效率和方便模块的引入，HO2.js 应运而生。</div>
+			<div class="idx_intro_block">HO2.js的作用是将分散的多个模块打包成一个文件加载到页面上去，省去了农们复制粘贴的工作。</div>
+			<div class="idx_intro_block">HO2.js不是模块的生产者，它只是模块的搬运工，开发者可以根据自身的需求引入不同的模块。</div>
+		</div>
+		<!--E 首页-->
+	</div>
+
+	<!--S 底部-->
+<footer class="footer">
+	<p>
+		Driven by <a href='http://hexo.io' target="_blank">Hexo</a>.
+		<br> Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+	</p>
+</footer>
+<!--E 底部-->
+	<script type="text/javascript">
+		window.hexo = {};
+		hexo.config = JSON.parse(
+			'{"title":"Hexo","subtitle":null,"description":null,"author":"Littly","language":null,"timezone":null,"url":"http://yourasite.com/haloDoc","root":"/haloDoc/","permalink":"api/:title/","permalink_defaults":{},"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":[],"new_post_name":":title.md","default_layout":"doc","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":false,"line_number":true,"auto_detect":true,"tab_replace":true},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"hexo-theme-doc","deploy":{"type":"git","repo":"git@github.com:Littly/haloDoc.git"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"index_generator":{"per_page":0},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"log":false,"ip":"0.0.0.0"}}'
+		);
+		hexo.theme = JSON.parse(
+			'{"title":"Hexo","subtitle":null,"description":null,"author":"Littly","language":null,"timezone":null,"url":"http://yourasite.com/haloDoc","root":"/haloDoc/","permalink":"api/:title/","permalink_defaults":{},"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":[],"new_post_name":":title.md","default_layout":"doc","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":false,"line_number":true,"auto_detect":true,"tab_replace":true},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":"hexo-theme-doc","deploy":{"type":"git","repo":"git@github.com:Littly/haloDoc.git"},"category_generator":{"per_page":0},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"index_generator":{"per_page":0},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"log":false,"ip":"0.0.0.0"},"Changyan":true,"TOClevel":[2]}'
+		);
+		hexo.path = 'index.html';
+	</script>
+	<script src="/haloDoc/js/bundle.js" type="text/javascript"></script>
+</body>
+
+</html>
