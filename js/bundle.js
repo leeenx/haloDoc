@@ -8,7 +8,7 @@ else {
 	var IDX = require('./modules/idx.js');
 	IDX.init();
 	IDX.start();
-} 
+}
 },{"./modules/api.js":2,"./modules/idx.js":5}],2:[function(require,module,exports){
 /*API页面相关*/
 var Util = require('./util'),
@@ -17,7 +17,6 @@ var Util = require('./util'),
 var Category,
 	Search,
 	Template,
-	Changyan,
 	init;
 
 Template = function (temp) {
@@ -239,31 +238,10 @@ Search = (function () {
 	}
 })();
 
-Changyan = {
-	init: function () {
-		var tmp = document.createElement('div');
-		tmp.id = "SOHUCS";
-		document.getElementById('j_post').appendChild(tmp);
-		window.addEventListener('load', function () {
-			Util.appendScript(
-				'http://changyan.sohu.com/upload/changyan.js',
-				function () {
-					window.changyan.api.config({
-						appid: 'cys9bVBfr',
-						conf: 'prod_00e3275fbf265a42aa1288efaf3cdeb8'
-					});
-				});
-		});
-	}
-};
-
 init = function () {
 	CodePrettify.init();
 	Category.init();
 	Search.init();
-	if (hexo.theme.Changyan) {
-		Changyan.init();
-	}
 };
 
 module.exports = {
